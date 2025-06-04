@@ -6,7 +6,7 @@ import (
 )
 
 type OrderService interface {
-	CreateOrder(models.Order) (orderId int, err error)
+	CreateOrder(models.Order) (orderId int64, err error)
 }
 
 type orderService struct {
@@ -17,6 +17,6 @@ func NewOrderService(r interfaces.OrderRepository) OrderService {
 	return &orderService{orepo: r}
 }
 
-func (s *orderService) CreateOrder(o models.Order) (int, error) {
+func (s *orderService) CreateOrder(o models.Order) (int64, error) {
 	return s.orepo.CreateOrder(o)
 }

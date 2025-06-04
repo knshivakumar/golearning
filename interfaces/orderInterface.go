@@ -5,5 +5,5 @@ import (
 )
 
 type OrderRepository interface {
-	CreateOrder(models.Order) (orderId int, err error)
+	CreateOrder(models.Order) (orderId int64, err error)
 }

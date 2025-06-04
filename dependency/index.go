@@ -19,7 +19,7 @@ func BuildContainer(db *sql.DB) *Container {
 	userService := services.NewUserService(userRepo)
 	userController := controllers.NewUserController(userService)
 
-	orderRepo := repositories.NewOrderRepository()
+	orderRepo := repositories.NewOrderRepository(db)
 	orderService := services.NewOrderService(orderRepo)
 	orderController := controllers.NewOrderController(orderService)
 
