@@ -14,7 +14,7 @@ type userRepo struct {
 
 func (r *userRepo) GetAllUsers() ([]models.User, error) {
 	//In a real project, this would interact with the DB
-	rows, err := r.db.Query("select ID, Email, UserName from users")
+	rows, err := r.db.Query("select id, email, username from users")
 	if err != nil {
 		return nil, err
 	}

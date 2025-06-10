@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/joho/godotenv"
 )
 
@@ -28,7 +29,7 @@ func ConnectDB() *sql.DB {
 
 	//Open connections to DB
 	DB, err := sql.Open("mysql", dsn)
-	err = DB.Ping()
+	//err = DB.Ping()
 	if err != nil {
 		log.Fatalf("Error in connecting to database: %v", err)
 	}
